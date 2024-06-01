@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Importando a fonte 'Poppins' do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Importando os estilos de ícones da Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./../styles.css" />
+    <!-- Título da página -->
+    <title>Categorias - WikiLife</title>
+  </head>
+  <body>
+    <!-- Cabeçalho da página -->
+    <header>
+      <div class="navbar">
+        <div class="navbar-content">
+          <!-- Ícone para abrir a barra lateral na versão mobile -->
+          <div id="mobile-menu-icon" onclick="toggleSidebar()">&#9776;</div>
+          <!-- Título do site com link para a página inicial -->
+          <div class="navbar-title">
+            <h1><a href="./../index.html">WikiLife</a></h1>
+          </div>
+        </div>
+        <!-- Formulário de pesquisa na barra de navegação -->
+        <form id="search-set">
+          <input
+            type="search"
+            id="search-bar"
+            name="pesquisa"
+            placeholder="O que você quer aprender hoje?"
+          />
+          <button type="submit" id="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <!-- Links de navegação na barra de navegação -->
+        <div class="navbar-links">
+          <a class="navbar-link" href="./../index.html">Início</a>
+          <a class="navbar-link" href="./../navbar-links/categorias.html"
+            >Categorias</a
+          >
+          <a class="navbar-link" href="./../navbar-links/blog.html">Blog</a>
+          <a class="navbar-link" href="./../navbar-links/contato.html"
+            >Contato</a
+          >
+          <a class="navbar-link" href="./../navbar-links/sobre.html">Sobre</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Corpo principal da página -->
+    <main>
+      <!-- Barra lateral -->
+      <div class="sidebar" id="sidebar">
+        <!-- Ícone para fechar a barra lateral na versão mobile -->
+        <div id="mobile-menu-icon" onclick="toggleSidebar()">&#9776;</div>
+        <!-- Links de navegação na barra lateral -->
+        <a class="sidebar-link" href="./../index.html">Início</a>
+        <a class="sidebar-link" href="./../navbar-links/categorias.html"
+          >Categorias</a
+        >
+        <a class="sidebar-link" href="./../navbar-links/blog.html">Blog</a>
+        <a class="sidebar-link" href="./../navbar-links/contato.html"
+          >Contato</a
+        >
+        <a class="sidebar-link" href="./../navbar-links/sobre.html">Sobre</a>
+      </div>
+
+      <!-- Contêiner de conteúdo principal -->
+      <div class="content-container">
+        <!-- Contêiner de destaques -->
+        <div class="conteudo-container">
+          <h1>Categorias</h1>
+          <br />
+          <div class="categorias">
+            <div class="color-background-post margin-categoria">
+              <p><a href="acessorio_para_veiculos.html">Acessório para veículos</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="agro.html">Agro</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="ambiente.html">Ambiente</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="animais_e_plantas.html">Animais e plantas</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="alimentos_e_bebidas.html">Alimentos e bebidas</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="arte_e_trabalhos_manuais.html">Arte e trabalhos manuais</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="artigos_infantis.html">Artigos infantis</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="beleza_e_cuidados_pessoais.html">Beleza e cuidados pessoais</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="desenvolvimento_pessoal.html">Desenvolvimento pessoal</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="design.html">Design</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="direito.html">Direito</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="educacao.html">Educação</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="eletronicos.html">Eletrônicos</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="empreendedorismo_digital.html">Empreendedorismo Digital</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="entretenimento.html">Entretenimento</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="espiritualidade.html">Espiritualidade</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="esporte_e_fitness.html">Esporte e fitness</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="financas.html">Finanças</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="gastronomia.html">Gastronomia</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="geral.html">Geral</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="hobbies.html">Hobbies</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="idiomas.html">Idiomas</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="impressos.html">Impressos</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="internet.html">Internet</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="literatura.html">Literatura</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="moda.html">Moda</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="moda_e_beleza.html">Moda e beleza</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="musica_e_arte.html">Música e arte</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="negocios_e_carreira.html">Negócios e carreira</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="outros.html">Outros</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="predios_e_construcoes.html">Prédios e construções</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="relacionamentos.html">Relacionamentos</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="saude.html">Saúde</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="saude_e_esportes.html">Saúde e esportes</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="sexualidade.html">Sexualidade</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="software.html">Software</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="tecnologia_da_informacao.html">Tecnologia da informação</a></p>
+            </div>
+            <div class="color-background-post margin-categoria">
+              <p><a href="todas_as_categorias.html">Todas as categorias</a></p>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+      <p>&copy; 2024 WikiLife. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+  <script src="./../scripts.js"></script>
+</html>
