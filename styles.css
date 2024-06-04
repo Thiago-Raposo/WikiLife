@@ -22,7 +22,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #333;
-  padding: 10px 20px;
+  padding: 10px 10px;
   color: #f2f2f2;
   width: 100%;
   flex: 1;
@@ -67,6 +67,7 @@ body {
 
 /* Estilos do botão de pesquisa */
 #search-button {
+  display: flex;
   background-color: #4caf50;
   color: white;
   border: none;
@@ -74,9 +75,15 @@ body {
   padding: 6px 10px;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  padding: 5px;
+  min-width: 35px;
+  min-height: 35px;
+  width: 35px;
+  height: 35px;
   transition: background-color 0.3s;
   margin-left: 5px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Estilos do botão de pesquisa no hover */
@@ -155,6 +162,7 @@ main {
 
 .margin-destaques {
   margin: 20px;
+  padding: 20px;
 }
 
 .container-destaques {
@@ -167,7 +175,7 @@ main {
 .sidebar {
   background-color: #333;
   color: #f2f2f2;
-  padding: 20px;
+  padding: 10px;
   width: 200px;
   position: fixed;
   top: 0;
@@ -181,7 +189,7 @@ main {
   color: inherit;
   text-decoration: none;
   display: block;
-  padding: 10px 0;
+  padding: 10px 10px;
 }
 
 /* Estilos dos links da barra lateral no hover */
@@ -197,6 +205,10 @@ main {
 /* Estilos da caixa de pesquisa na versão mobile */
 #search-bar {
   width: 100%;
+}
+
+#search-set {
+  font-size: 70%;
 }
 
 /* Estilos para telas maiores que 769px */
@@ -223,12 +235,19 @@ main {
   #search-set {
     display: flex;
     align-items: center;
-    margin-right: 50px;
+    margin-right: 40px;
   }
 }
 
 /* Estilos para telas menores que 768px */
 @media screen and (max-width: 768px) {
+  body {
+    font-size: 70%;
+  }
+  .margin-destaques {
+    margin: 5px;
+    padding: 10px;
+  }
   /* Estilos da barra de navegação na versão mobile */
   .navbar {
     display: flex;
@@ -236,7 +255,6 @@ main {
     align-items: center;
     flex-direction: column;
     background-color: #333;
-    padding: 10px 20px;
     color: #f2f2f2;
   }
   /* Estilos do conteúdo da barra de navegação na versão mobile */
@@ -250,6 +268,7 @@ main {
 
   /* Exibe o ícone de menu na versão mobile */
   #mobile-menu-icon {
+    padding: 10px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -283,6 +302,18 @@ main {
 
   .content-container {
     width: 100%; /* Largura máxima ocupando toda a tela */
+  }
+
+  #search-bar {
+    height: 25px;
+    font-size: 13px;
+  }
+
+  #search-button {
+    min-width: 25px;
+    min-height: 25px;
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -324,7 +355,26 @@ main {
   text-justify: inter-word;
 }
 
+.color-background-categorias {
+  background-color: #dadada;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 5px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.color-links-categorias a {
+  text-decoration: none;
+  color: #3432b6;
+}
+
+.color-links-categorias a:hover {
+  color: #45a049;
+}
+
 .semana-destaque {
   color: rgba(0, 0, 0, 0.3);
   font-size: small;
 }
+

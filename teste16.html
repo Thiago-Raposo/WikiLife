@@ -20,7 +20,387 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Estilos gerais */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Estilos do corpo da página */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f5f5f5;
+        overflow-x: hidden; /* Para evitar a barra de rolagem horizontal */
+
+        display: grid;
+        grid-template-rows: auto 1fr auto; /* Última linha é o rodapé */
+        min-height: 100vh;
+      }
+
+      /* Estilos da barra de navegação */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 10px 10px;
+        color: #f2f2f2;
+        width: 100%;
+        flex: 1;
+        max-width: 100%;
+      }
+
+      /* Estilos dos links da barra de navegação */
+      .navbar a {
+        color: inherit;
+        text-decoration: none;
+        padding: 10px 15px;
+      }
+
+      /* Estilos dos links da barra de navegação no hover */
+      .navbar a:hover {
+        background-color: #333;
+        color: #45a049;
+      }
+
+      /* Estilos do conteúdo da barra de navegação */
+      .navbar-content {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Estilos do formulário da barra de navegação */
+      .navbar-form {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Estilos da caixa de pesquisa */
+      #search-bar {
+        border: none;
+        border-radius: 25px;
+        width: 300px;
+        height: 35px;
+        padding: 10px;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+      }
+
+      /* Estilos do botão de pesquisa */
+      #search-button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 6px 10px;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        margin-left: 5px;
+      }
+
+      /* Estilos do botão de pesquisa no hover */
+      #search-button:hover {
+        background-color: #45a049;
+      }
+
+      /* Estilos do rodapé */
+      footer {
+        background-color: #333;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Estilos do conteúdo principal */
+      main {
+        display: flex;
+        padding: 20px;
+
+        height: 100%;
+        max-width: 100%;
+        justify-content: center;
+      }
+
+      /* Estilos do contêiner de conteúdo */
+      .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 60%; /* Largura máxima ocupando toda a tela */
+      }
+
+      /* Estilos do contêiner de destaques */
+      .highlights-container {
+        justify-content: space-between;
+        background-color: #fff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .highlights-container-container {
+        display: block;
+      }
+
+      .conteudo-container {
+        background-color: #fff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: justify;
+        text-justify: inter-word;
+        width: 100%;
+        height: 100%;
+      }
+
+      .categorias {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+      }
+
+      .margin-categoria {
+        margin: 10px;
+        padding: 0px;
+        max-width: 100%;
+        justify-content: space-between;
+      }
+
+      .margin-destaques {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .container-destaques {
+        display: flex;
+        justify-content: space-evenly;
+        max-width: 100%;
+      }
+
+      /* Estilos da barra lateral */
+      .sidebar {
+        position: fixed;
+        background-color: #333;
+        color: #f2f2f2;
+        padding: 10px;
+        width: 200px;
+        position: fixed;
+        top: 0;
+        left: -200px;
+        height: 100%;
+        transition: left 0.3s;
+        z-index: 3;
+      }
+
+      /* Estilos dos links da barra lateral */
+      .sidebar-link {
+        color: inherit;
+        text-decoration: none;
+        display: block;
+        padding: 10px 10px;
+      }
+
+      /* Estilos dos links da barra lateral no hover */
+      .sidebar-link:hover {
+        background-color: #555;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        display: none;
+      }
+
+      /* Estilos dos links da barra de navegação na versão mobile */
+      .navbar-links {
+        display: none; /* Oculta os links da navbar por padrão */
+      }
+
+      /* Estilos da caixa de pesquisa na versão mobile */
+      #search-bar {
+        width: 100%;
+      }
+
+      #search-set {
+        font-size: 70%;
+      }
+
+      /* Estilos para telas maiores que 769px */
+      @media screen and (min-width: 769px) {
+        /* Estilos da barra de navegação */
+        .navbar {
+          display: grid;
+          grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        /* Estilos dos links da barra de navegação na versão desktop */
+        .navbar-links {
+          display: flex;
+          align-items: center;
+          max-width: 100%;
+        }
+
+        /* Oculta o ícone de menu na versão de PC */
+        #mobile-menu-icon {
+          display: none;
+        }
+
+        /* Estilos do conjunto de pesquisa */
+        #search-set {
+          display: flex;
+          align-items: center;
+          margin-right: 50px;
+        }
+      }
+
+      /* Estilos para telas menores que 768px */
+      @media screen and (max-width: 768px) {
+        body {
+          font-size: 70%;
+        }
+        .margin-destaques {
+          margin: 5px;
+          padding: 10px;
+        }
+        /* Estilos da barra de navegação na versão mobile */
+        .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          background-color: #333;
+          color: #f2f2f2;
+        }
+        /* Estilos do conteúdo da barra de navegação na versão mobile */
+        .navbar-content {
+          width: 100%;
+        }
+        /* Oculta os links da barra de navegação na versão mobile */
+        .navbar-links {
+          display: none;
+        }
+
+        /* Exibe o ícone de menu na versão mobile */
+        #mobile-menu-icon {
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          order: -1; /* Coloca o ícone na extremidade esquerda */
+        }
+
+        /* Estilos do título da barra de navegação na versão mobile */
+        .navbar-title {
+          text-align: center;
+          width: 100%;
+        }
+
+        /* Estilos do título da barra de navegação na versão mobile */
+        .navbar-title h1 {
+          margin: 0px;
+        }
+
+        /* Estilos do conjunto de pesquisa na versão mobile */
+        #search-set {
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+
+        .container-destaques {
+          display: flex;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          max-width: 100%;
+        }
+
+        .content-container {
+          width: 100%; /* Largura máxima ocupando toda a tela */
+        }
+      }
+
+      .wikilife {
+        color: #45a049;
+      }
+
+      .color-link a {
+        color: #45a049;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      #email {
+        color: #ffffff;
+      }
+
+      #instagram {
+        color: rgb(207, 105, 197);
+      }
+
+      #tiktok {
+        color: rgb(0, 0, 0);
+      }
+
+      #youtube {
+        color: rgb(206, 6, 6);
+      }
+
+      #facebook {
+        color: rgb(6, 89, 206);
+      }
+
+      .color-background-post {
+        background-color: #dadada;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+
+      .color-background-categorias {
+        background-color: #dadada;
+        border-radius: 8px;
+        padding: 5px;
+        margin: 5px;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+
+      .color-links-categorias a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      .color-links-categorias a:hover {
+        color: #45a049;
+      }
+
+      .semana-destaque {
+        color: rgba(0, 0, 0, 0.3);
+        font-size: small;
+      }
+
+      input[type="search"] {
+        height: 10px;
+        font-size: 10px; /* Tamanho da fonte */
+      }
+    
+    </style>
     <!-- Título da página -->
     <title>WikiLife</title>
   </head>
@@ -43,9 +423,10 @@
             id="search-bar"
             name="pesquisa"
             placeholder="O que você quer aprender hoje?"
+            size="20px"
           />
           <button type="submit" id="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-magnifying-glass fa-2xs"></i>
           </button>
         </form>
         <!-- Links de navegação na barra de navegação -->
@@ -76,6 +457,8 @@
         <a class="sidebar-link" href="./navbar-links/contato.html">Contato</a>
         <a class="sidebar-link" href="./navbar-links/sobre.html">Sobre</a>
       </div>
+
+      <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
       <!-- Contêiner de conteúdo principal -->
       <div class="content-container">
@@ -304,5 +687,18 @@
       </div>
     </footer>
   </body>
-  <script src="scripts.js"></script>
+  <script>
+    // JavaScript para controlar a abertura e fechamento da barra lateral
+    function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+      var overlay = document.getElementById("overlay");
+      if (sidebar.style.left === "0px") {
+        sidebar.style.left = "-200px";
+        overlay.style.display = "none";
+      } else {
+        sidebar.style.left = "0px";
+        overlay.style.display = "block";
+      }
+    }
+  </script>
 </html>
